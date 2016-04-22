@@ -1,0 +1,1 @@
+kubectl get svc | sed '1 s/^.*$//; /^$/d' | awk '{print $1}' | xargs kubectl describe svc | grep '^Name:\|^LoadBalancer Ingress:'
